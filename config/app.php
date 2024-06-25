@@ -123,7 +123,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    'key' => env('APP_KEY', md5(__FILE__)),
 
     'cipher' => 'AES-256-CBC',
 
