@@ -1,7 +1,7 @@
-@extends('main')
+@extends('page')
 
 @section('title')
-    <h1>@lang('global.' . $element)</h1>
+    @include('partials.title', ['icon' => $icon, 'title' => __('global.' . $element)])
 @endsection
 
 @section('content')

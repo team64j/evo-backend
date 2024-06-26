@@ -1,4 +1,4 @@
-@extends('main')
+@extends('page')
 
 @section('title')
     <h1>@lang('global.templates')</h1>

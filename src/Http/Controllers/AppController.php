@@ -11,7 +11,9 @@ class AppController extends Controller
     public function index()
     {
         return view('app', [
-            'menu' => $this->getMenu(),
+            'data' => [
+                'menu' => $this->getMenu(),
+            ]
         ]);
     }
 

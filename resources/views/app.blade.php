@@ -8,9 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ config('global.site_name') }} — Evo Manager</title>
     <script>
-      window['__DATA__'] = {
-        menu: @json($menu)
-      }
+      window['__DATA__'] = @json($data)
     </script>
     @vite('resources/js/app.js')
 </head>

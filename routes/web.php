@@ -2,6 +2,8 @@
 
 use EvoManager\Http\Controllers\AppController;
 use EvoManager\Http\Controllers\AuthController;
+use EvoManager\Http\Controllers\ConfigurationController;
+use EvoManager\Http\Controllers\DashboardController;
 use EvoManager\Http\Controllers\ElementsController;
 use EvoManager\Http\Controllers\TemplateController;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +26,9 @@ Route::middleware('auth:web')->group(fn() => [
         ->name('logout'),
 
     Route::get('/', [AppController::class, 'index'])->name('home'),
+
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard'),
+    Route::get('/configuration', [ConfigurationController::class, 'index'])->name('configuration'),
 
     Route::get('/elements/{element}', [ElementsController::class, 'index'])->name('elements'),
 

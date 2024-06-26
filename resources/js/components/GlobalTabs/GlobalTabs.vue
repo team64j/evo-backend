@@ -27,6 +27,25 @@ export default {
     },
     init () {
       router.getRoutes().filter(i => i?.meta?.fixed).map(i => this.addTab(router.parse(i)))
+
+      window.addEventListener('message', event => {
+        if (event.data) {
+          const meta = {}
+
+          if (event.data?.title) {
+            meta.title = event.data.title
+          }
+
+          if (event.data?.icon) {
+            meta.icon = event.data.icon
+          }
+
+          this.setTab({
+            loading: false,
+            meta
+          })
+        }
+      })
     },
     addTab (data) {
       if (!data) {
@@ -34,6 +53,8 @@ export default {
       }
 
       data = router.parse(data)
+
+      data.loading = true
 
       let is = false
 
@@ -43,7 +64,12 @@ export default {
         if (i.active) {
           is = true
           data.meta = i.meta
+          if (i.path === data.path) {
+            data.loading = false
+          }
           Object.assign(i, data)
+        } else {
+          i.loading = false
         }
       })
 
@@ -55,8 +81,6 @@ export default {
       this.keys = this.tabs.map(i => router.key(i))
     },
     setTab (data) {
-      this.$store.dispatch('set', { tabsLoading: data.loading })
-
       if (data.key) {
         const index = this.keys.indexOf(data.key)
         index > -1 && window._.mergeWith(this.tabs[index], data)
@@ -101,6 +125,14 @@ export default {
       router.to(tab)
     },
     dblClickTab (data) {
+      this.setTab({
+        loading: true,
+        meta: {
+          title: data?.meta?.title ? '...' : data?.meta?.title,
+          icon: data?.meta?.icon
+        }
+      })
+
       const key = router.key(data)
       const index = this.keys.indexOf(key)
       index > -1 && this.keys.splice(index, 1)
@@ -108,6 +140,9 @@ export default {
     },
     find (data) {
       return this.tabs.filter(i => router.key(i, data))[0] || null
+    },
+    onLoad (event, meta) {
+      event.target.contentWindow?.postMessage({ dark: 'dark' }, '*')
     }
   }
 }
@@ -122,14 +157,21 @@ export default {
               @dblclick="dblClickTab(i)"
               class="btn btn-sm"
               type="button">
-        <i v-if="i.meta.icon" :class="i.meta.icon"/>
-        <span v-if="i.path" class="app-global-tabs__title">{{ i.path }}</span>
+
+        <span v-if="i.loading || i.meta.icon" class="app-global-tabs__icon">
+          <i v-if="i.loading" class="spinner-border text-white"/>
+          <i v-else-if="i.meta.icon" :class="i.meta.icon"/>
+        </span>
+
+        <span v-if="i.meta.title" class="app-global-tabs__title">{{ i.meta.title }}</span>
+
         <span v-if="!i.meta.fixed" class="app-global-tabs__close" @mousedown.stop="closeTab(i)">✕</span>
+
       </button>
     </div>
     <div class="app-global-tabs__frames">
-      <template v-for="{ path } in tabs" :key="path">
-        <iframe v-if="keys.includes(path)" v-show="$route.path === path" :src="path"/>
+      <template v-for="{ path, meta } in tabs" :key="path">
+        <iframe v-if="keys.includes(path)" v-show="$route.path === path" :src="path" @load="onLoad($event, meta)"/>
       </template>
     </div>
   </div>
@@ -150,6 +192,7 @@ export default {
   background-color: var(--bs-gray-900);
 }
 .app-global-tabs__tabs button {
+  height: 1.75rem;
   padding: 0.125rem 0.75rem;
   border-radius: 0;
   white-space: nowrap;
@@ -158,12 +201,23 @@ export default {
   align-items: center;
   text-align: left;
 }
+.app-global-tabs__icon {
+  width: 1rem;
+}
+.app-global-tabs__icon i {
+  color: white !important;
+}
+.app-global-tabs__icon .spinner-border {
+  width: 1rem;
+  height: 1rem;
+  border-width: 2px
+}
 .app-global-tabs__title {
   width: 7rem;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.app-global-tabs__tabs button i ~ .app-global-tabs__title {
+.app-global-tabs__tabs button .app-global-tabs__icon ~ .app-global-tabs__title {
   margin-left: 0.5rem;
 }
 .app-global-tabs__close {
