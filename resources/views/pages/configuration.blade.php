@@ -514,7 +514,7 @@
                             @endfor
                         </select>
                         <small class="text-muted">
-                            {{ sprintf(__('global.serveroffset_message'), date('H:i:s'), date('H:i:s', time() + config('global.server_offset_time'))) }}
+                            {!! sprintf(__('global.serveroffset_message'), date('H:i:s'), date('H:i:s', time() + config('global.server_offset_time'))) !!}
                         </small>
                     </td>
                 </tr>
