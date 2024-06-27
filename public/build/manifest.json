@@ -1,114 +1,114 @@
 {
-  "_axios-B-tMOEUT.js": {
-    "file": "assets/axios-B-tMOEUT.js",
+  "_B-tMOEUT.js": {
+    "file": "assets/js/B-tMOEUT.js",
     "name": "axios"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf": {
-    "file": "assets/fa-brands-400-DHHcbFjz.ttf",
+    "file": "assets/fonts/DHHcbFjz.ttf",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2": {
-    "file": "assets/fa-brands-400-Ch568Ea9.woff2",
+    "file": "assets/fonts/Ch568Ea9.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf": {
-    "file": "assets/fa-regular-400-C54-fRIQ.ttf",
+    "file": "assets/fonts/C54-fRIQ.ttf",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2": {
-    "file": "assets/fa-regular-400-9VThgXHM.woff2",
+    "file": "assets/fonts/9VThgXHM.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf": {
-    "file": "assets/fa-solid-900-Cm9M9sZB.ttf",
+    "file": "assets/fonts/Cm9M9sZB.ttf",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2": {
-    "file": "assets/fa-solid-900-QWY35r5r.woff2",
+    "file": "assets/fonts/QWY35r5r.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.ttf": {
-    "file": "assets/fa-v4compatibility-DLBX5pNp.ttf",
+    "file": "assets/fonts/DLBX5pNp.ttf",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.ttf"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2": {
-    "file": "assets/fa-v4compatibility-BRdYr4HJ.woff2",
+    "file": "assets/fonts/BRdYr4HJ.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2"
   },
   "resources/img/login-background.jpg": {
-    "file": "assets/login-background-Cgmf6hWT.jpg",
+    "file": "assets/img/Cgmf6hWT.jpg",
     "src": "resources/img/login-background.jpg"
   },
   "resources/img/logo.svg": {
-    "file": "assets/logo-n4S_xBwO.svg",
+    "file": "assets/img/n4S_xBwO.svg",
     "src": "resources/img/logo.svg"
   },
   "resources/js/app-auth.js": {
-    "file": "assets/app-auth-CDuOckfq.js",
+    "file": "assets/js/BqYX6hSb.js",
     "name": "app-auth",
     "src": "resources/js/app-auth.js",
     "isEntry": true,
     "imports": [
-      "_axios-B-tMOEUT.js"
+      "_B-tMOEUT.js"
     ],
     "css": [
-      "assets/app-auth-BUi3hGo-.css"
+      "assets/css/kU7VD4Fl.css"
     ],
     "assets": [
-      "assets/fa-brands-400-Ch568Ea9.woff2",
-      "assets/fa-brands-400-DHHcbFjz.ttf",
-      "assets/fa-regular-400-9VThgXHM.woff2",
-      "assets/fa-regular-400-C54-fRIQ.ttf",
-      "assets/fa-solid-900-QWY35r5r.woff2",
-      "assets/fa-solid-900-Cm9M9sZB.ttf",
-      "assets/fa-v4compatibility-BRdYr4HJ.woff2",
-      "assets/fa-v4compatibility-DLBX5pNp.ttf",
-      "assets/login-background-Cgmf6hWT.jpg",
-      "assets/logo-n4S_xBwO.svg"
+      "assets/fonts/Ch568Ea9.woff2",
+      "assets/fonts/DHHcbFjz.ttf",
+      "assets/fonts/9VThgXHM.woff2",
+      "assets/fonts/C54-fRIQ.ttf",
+      "assets/fonts/QWY35r5r.woff2",
+      "assets/fonts/Cm9M9sZB.ttf",
+      "assets/fonts/BRdYr4HJ.woff2",
+      "assets/fonts/DLBX5pNp.ttf",
+      "assets/img/Cgmf6hWT.jpg",
+      "assets/img/n4S_xBwO.svg"
     ]
   },
   "resources/js/app-page.js": {
-    "file": "assets/app-page-CZbywm2B.js",
+    "file": "assets/js/D8iica1I.js",
     "name": "app-page",
     "src": "resources/js/app-page.js",
     "isEntry": true,
     "imports": [
-      "_axios-B-tMOEUT.js"
+      "_B-tMOEUT.js"
     ],
     "css": [
-      "assets/app-page-DQbrU9le.css"
+      "assets/css/C4QpxGCT.css"
     ],
     "assets": [
-      "assets/fa-brands-400-Ch568Ea9.woff2",
-      "assets/fa-brands-400-DHHcbFjz.ttf",
-      "assets/fa-regular-400-9VThgXHM.woff2",
-      "assets/fa-regular-400-C54-fRIQ.ttf",
-      "assets/fa-solid-900-QWY35r5r.woff2",
-      "assets/fa-solid-900-Cm9M9sZB.ttf",
-      "assets/fa-v4compatibility-BRdYr4HJ.woff2",
-      "assets/fa-v4compatibility-DLBX5pNp.ttf"
+      "assets/fonts/Ch568Ea9.woff2",
+      "assets/fonts/DHHcbFjz.ttf",
+      "assets/fonts/9VThgXHM.woff2",
+      "assets/fonts/C54-fRIQ.ttf",
+      "assets/fonts/QWY35r5r.woff2",
+      "assets/fonts/Cm9M9sZB.ttf",
+      "assets/fonts/BRdYr4HJ.woff2",
+      "assets/fonts/DLBX5pNp.ttf"
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-eN7c7UWa.js",
+    "file": "assets/js/BFlLDgWR.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "imports": [
-      "_axios-B-tMOEUT.js"
+      "_B-tMOEUT.js"
     ],
     "css": [
-      "assets/app-DqlTsnUC.css"
+      "assets/css/8y4om8vU.css"
     ],
     "assets": [
-      "assets/fa-brands-400-Ch568Ea9.woff2",
-      "assets/fa-brands-400-DHHcbFjz.ttf",
-      "assets/fa-regular-400-9VThgXHM.woff2",
-      "assets/fa-regular-400-C54-fRIQ.ttf",
-      "assets/fa-solid-900-QWY35r5r.woff2",
-      "assets/fa-solid-900-Cm9M9sZB.ttf",
-      "assets/fa-v4compatibility-BRdYr4HJ.woff2",
-      "assets/fa-v4compatibility-DLBX5pNp.ttf"
+      "assets/fonts/Ch568Ea9.woff2",
+      "assets/fonts/DHHcbFjz.ttf",
+      "assets/fonts/9VThgXHM.woff2",
+      "assets/fonts/C54-fRIQ.ttf",
+      "assets/fonts/QWY35r5r.woff2",
+      "assets/fonts/Cm9M9sZB.ttf",
+      "assets/fonts/BRdYr4HJ.woff2",
+      "assets/fonts/DLBX5pNp.ttf"
     ]
   }
 }

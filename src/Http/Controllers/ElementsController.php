@@ -11,11 +11,17 @@ use EvolutionCMS\Models\SitePlugin;
 use EvolutionCMS\Models\SiteSnippet;
 use EvolutionCMS\Models\SiteTemplate;
 use EvolutionCMS\Models\SiteTmplvar;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 
 class ElementsController extends Controller
 {
-    public function index(Request $request, string $element)
+    /**
+     * @throws ValidationException
+     */
+    public function index(Request $request, string $element): View
     {
         $help = '';
         $icon = '';

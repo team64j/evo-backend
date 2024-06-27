@@ -10,5 +10,5 @@
     @vite('resources/js/app.js')
 </head>
 <body id="app-evo"></body>
-<script id="__DATA__" type="application/json">@json($data)</script>
+<script id="__DATA__" type="application/json">@json($data, JSON_UNESCAPED_UNICODE)</script>
 </html>
