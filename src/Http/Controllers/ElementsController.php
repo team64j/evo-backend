@@ -50,7 +50,9 @@ class ElementsController extends Controller
             case 'plugins':
                 $icon = 'fa fa-plug';
                 $elements = SitePlugin::query()
-                    ->paginate(20);
+                    ->with('categories')
+                    ->orderBy('category')
+                    ->paginate(2);
                 break;
 
             case 'modules':

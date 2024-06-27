@@ -51,17 +51,42 @@
     </ul>
 
     <table class="table">
-        <tbody>
-        @foreach($elements as $item)
-            <tr>
-                <td>
-                    {{ $item->id }}
-                </td>
-                <td>
-                    {{ $item->name }}
-                </td>
-            </tr>
-        @endforeach
-        </tbody>
+        @php($category = -1)
+        @foreach($elements as $key => $item)
+            @if(!$item instanceof \EvolutionCMS\Models\Category)
+                @if($category != $item->category)
+                    @php($category = $item->category)
+                    <tbody data-category="{{ $category ?? 0 }}">
+                    <tr>
+                        <td colspan="2">
+                            {{ $category ? $item->categories->category : __('global.no_category') }}
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tbody>
+                @endif
+            @elseif($key == 0)
+                <tbody>
+                @endisset
+
+                <tr>
+                    <td>
+                        {{ $item->id }}
+                    </td>
+                    <td>
+                        {{ $item->name }}
+                    </td>
+                </tr>
+                @endforeach
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <div class="pagination">
+                            {{ $elements }}
+                        </div>
+                    </td>
+                </tr>
+                </tfoot>
     </table>
 @endsection

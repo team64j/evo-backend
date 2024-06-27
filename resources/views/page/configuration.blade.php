@@ -13,43 +13,57 @@
         @csrf
         <ul class="nav nav-pills mb-3 flex-grow-0 d-flex flex-nowrap px-3 overflow-auto">
             <li class="nav-item">
-                <button class="nav-link py-1 text-nowrap active" data-bs-toggle="pill" data-bs-target="#settings_site"
+                <button class="nav-link py-1 text-nowrap active"
+                        data-bs-toggle="pill"
+                        data-bs-target="#settings_site"
                         type="button">
                     @lang('global.settings_site')
                 </button>
             </li>
             <li class="nav-item">
-                <button class="nav-link py-1 text-nowrap" data-bs-toggle="pill" data-bs-target="#settings_furls"
+                <button class="nav-link py-1 text-nowrap"
+                        data-bs-toggle="pill"
+                        data-bs-target="#settings_furls"
                         type="button">
                     @lang('global.settings_furls')
                 </button>
             </li>
             <li class="nav-item">
-                <button class="nav-link py-1 text-nowrap" data-bs-toggle="pill" data-bs-target="#settings_ui"
+                <button class="nav-link py-1 text-nowrap"
+                        data-bs-toggle="pill"
+                        data-bs-target="#settings_ui"
                         type="button">
                     @lang('global.settings_ui')
                 </button>
             </li>
             <li class="nav-item">
-                <button class="nav-link py-1 text-nowrap" data-bs-toggle="pill" data-bs-target="#settings_security"
+                <button class="nav-link py-1 text-nowrap"
+                        data-bs-toggle="pill"
+                        data-bs-target="#settings_security"
                         type="button">
                     @lang('global.settings_security')
                 </button>
             </li>
             <li class="nav-item">
-                <button class="nav-link py-1 text-nowrap" data-bs-toggle="pill" data-bs-target="#settings_misc"
+                <button class="nav-link py-1 text-nowrap"
+                        data-bs-toggle="pill"
+                        data-bs-target="#settings_misc"
                         type="button">
                     @lang('global.settings_misc')
                 </button>
             </li>
             <li class="nav-item">
-                <button class="nav-link py-1 text-nowrap" data-bs-toggle="pill" data-bs-target="#settings_KC"
+                <button class="nav-link py-1 text-nowrap"
+                        data-bs-toggle="pill"
+                        data-bs-target="#settings_KC"
                         type="button">
                     @lang('global.settings_KC')
                 </button>
             </li>
             <li class="nav-item">
-                <button class="nav-link py-1 text-nowrap" data-bs-toggle="pill" data-bs-target="#settings_email_templates"
+                <button class="nav-link py-1 text-nowrap"
+                        data-bs-toggle="pill"
+                        data-bs-target="#settings_email_templates"
                         type="button">
                     @lang('global.settings_email_templates')
                 </button>
@@ -144,7 +158,8 @@
                     <tr>
                         <td>
                             @lang('global.siteunavailable_page_title')
-                            <i class="fa far fa-question-circle" title="@lang('global.siteunavailable_page_message')"></i>
+                            <i class="fa far fa-question-circle"
+                               title="@lang('global.siteunavailable_page_message')"></i>
                         </td>
                         <td>site_unavailable_page</td>
                         <td>
@@ -155,7 +170,8 @@
                     <tr>
                         <td>
                             @lang('global.controller_namespace')
-                            <i class="fa far fa-question-circle" title="@lang('global.controller_namespace_message')"></i>
+                            <i class="fa far fa-question-circle"
+                               title="@lang('global.controller_namespace_message')"></i>
                         </td>
                         <td>ControllerNamespace</td>
                         <td>
@@ -291,7 +307,9 @@
                                             &commat;ENDIF
                                         </a>
                                     </li>
-                                    <li>&lt;&commat;LITERAL&gt; <span v-pre>&lbrace;&lbrace;string&rbrace;&rbrace;</span> [*string*] [[string]]
+                                    <li>&lt;&commat;LITERAL&gt; <span
+                                                v-pre>&lbrace;&lbrace;string&rbrace;&rbrace;</span> [*string*]
+                                        [[string]]
                                         &lt;&commat;ENDLITERAL&gt;
                                     </li>
                                     <li>&lt;!--&commat;- Do not output -&commat;--&gt;</li>
