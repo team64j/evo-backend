@@ -1,5 +1,4 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import { h } from 'vue'
 
 const routes = [
   {
@@ -11,7 +10,7 @@ const routes = [
   },
   {
     path: '/dashboard',
-    component: h('div'),
+    component: {},
     meta: {
       fixed: true,
       icon: 'fa fa-home',
@@ -20,19 +19,19 @@ const routes = [
   },
   {
     path: '/:path(.*)',
-    component: h('div'),
+    component: {}
   },
   {
     path: '/:path(.*)/:id(\d+)',
-    component: h('div'),
+    component: {}
   },
-  // {
-  //   path: '/:path(.*)/:element',
-  //   component: h('div'),
-  // },
+  {
+    path: '/:path(.*)/:element',
+    component: {}
+  },
   {
     path: '/elements/:element',
-    component: h('div'),
+    component: {},
     meta: {
       group: true
     }
