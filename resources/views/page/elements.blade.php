@@ -50,43 +50,58 @@
         </li>
     </ul>
 
+    @php($category = -1)
+
     <table class="table">
-        @php($category = -1)
+        <thead>
+        <tr>
+            <th style="width: 1%">@lang('global.id')</th>
+            <th>@lang('global.name')</th>
+            <th>@lang('global.description')</th>
+        </tr>
+        </thead>
         @foreach($elements as $key => $item)
             @if(!$item instanceof \EvolutionCMS\Models\Category)
                 @if($category != $item->category)
                     @php($category = $item->category)
-                    <tbody data-category="{{ $category ?? 0 }}">
+                    <thead data-category="{{ $category ?? 0 }}">
                     <tr>
-                        <td colspan="2">
+                        <th>
+                            <i class="fa far fa-minus-square"></i>
+                        </th>
+                        <th colspan="2">
                             {{ $category ? $item->categories->category : __('global.no_category') }}
-                        </td>
+                        </th>
                     </tr>
-                    </tbody>
+                    </thead>
                     <tbody>
                 @endif
             @elseif($key == 0)
                 <tbody>
-                @endisset
+            @endisset
 
-                <tr>
-                    <td>
-                        {{ $item->id }}
-                    </td>
-                    <td>
-                        {{ $item->name }}
-                    </td>
-                </tr>
-                @endforeach
-                </tbody>
+            <tr>
+                <td>
+                    {{ $item->id }}
+                </td>
+                <td>
+                    {{ $item->name }}
+                </td>
+                <td>
+                    <small class="text-muted">{!! $item->description ?? '' !!}</small>
+                </td>
+            </tr>
+            @endforeach
+
+            </tbody>
+            @if($elements->hasPages())
                 <tfoot>
                 <tr>
-                    <td colspan="2">
-                        <div class="pagination">
-                            {{ $elements }}
-                        </div>
+                    <td colspan="3">
+                        {{ $elements->links() }}
                     </td>
                 </tr>
                 </tfoot>
+            @endif
     </table>
 @endsection

@@ -4,6 +4,7 @@ namespace EvoManager\Providers;
 
 use EvolutionCMS\Models\SystemSetting;
 use EvoManager\Hashing\EvoHasher;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Hash;
@@ -27,6 +28,9 @@ class AppServiceProvider extends ServiceProvider
         Hash::extend('evo', static function () {
             return new EvoHasher();
         });
+
+        Paginator::useBootstrapFive();
+        Paginator::useBootstrapFour();
 
         Config::set('global', Cache::rememberForever('global.settings', function () {
             return SystemSetting::all()
