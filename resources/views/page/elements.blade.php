@@ -1,7 +1,7 @@
 @extends('page')
 
 @section('title')
-    @include('partials.title', ['icon' => $icon, 'title' => __('global.' . $element)])
+    @include('partials.title', ['icon' => $icon, 'title' => __('global.' . $element), 'help' => $help])
 @endsection
 
 @section('content')
@@ -85,6 +85,7 @@
                     {{ $item->id }}
                 </td>
                 <td>
+                    <i class="{{ $icon }}"></i>
                     {{ $item->name }}
                 </td>
                 <td>
