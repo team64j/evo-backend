@@ -7,53 +7,46 @@
 @section('content')
     <ul class="nav nav-pills mb-3 flex-grow-0 d-flex flex-nowrap px-3 overflow-auto">
         <li class="nav-item">
-            <button class="nav-link py-1 text-nowrap {{ $element == 'templates' ? 'active' : '' }}"
-                    type="button"
-                    onclick="app.routeTo('/elements/templates')">
+            <a href="elements/templates"
+               class="nav-link py-1 text-nowrap {{ $element == 'templates' ? 'active' : '' }}">
                 @lang('global.templates')
-            </button>
+            </a>
         </li>
         <li class="nav-item">
-            <button class="nav-link py-1 text-nowrap {{ $element == 'tmplvars' ? 'active' : '' }}"
-                    type="button"
-                    onclick="app.routeTo('/elements/tvs')">
+            <a href="elements/tvs"
+               class="nav-link py-1 text-nowrap {{ $element == 'tmplvars' ? 'active' : '' }}">
                 @lang('global.tmplvars')
-            </button>
+            </a>
         </li>
         <li class="nav-item">
-            <button class="nav-link py-1 text-nowrap {{ $element == 'htmlsnippets' ? 'active' : '' }}"
-                    type="button"
-                    onclick="app.routeTo('/elements/chunks')">
+            <a href="elements/chunks"
+               class="nav-link py-1 text-nowrap {{ $element == 'htmlsnippets' ? 'active' : '' }}">
                 @lang('global.htmlsnippets')
-            </button>
+            </a>
         </li>
         <li class="nav-item">
-            <button class="nav-link py-1 text-nowrap {{ $element == 'snippets' ? 'active' : '' }}"
-                    type="button"
-                    onclick="app.routeTo('/elements/snippets')">
+            <a href="elements/snippets"
+               class="nav-link py-1 text-nowrap {{ $element == 'snippets' ? 'active' : '' }}">
                 @lang('global.snippets')
-            </button>
+            </a>
         </li>
         <li class="nav-item">
-            <button class="nav-link py-1 text-nowrap {{ $element == 'plugins' ? 'active' : '' }}"
-                    type="button"
-                    onclick="app.routeTo('/elements/plugins')">
+            <a href="elements/plugins"
+               class="nav-link py-1 text-nowrap {{ $element == 'plugins' ? 'active' : '' }}">
                 @lang('global.plugins')
-            </button>
+            </a>
         </li>
         <li class="nav-item">
-            <button class="nav-link py-1 text-nowrap {{ $element == 'modules' ? 'active' : '' }}"
-                    type="button"
-                    onclick="app.routeTo('/elements/modules')">
+            <a href="elements/modules"
+               class="nav-link py-1 text-nowrap {{ $element == 'modules' ? 'active' : '' }}">
                 @lang('global.modules')
-            </button>
+            </a>
         </li>
         <li class="nav-item">
-            <button class="nav-link py-1 text-nowrap {{ $element == 'categories' ? 'active' : '' }}"
-                    type="button"
-                    onclick="app.routeTo('/elements/categories')">
+            <a href="elements/categories"
+               class="nav-link py-1 text-nowrap {{ $element == 'categories' ? 'active' : '' }}">
                 @lang('global.categories')
-            </button>
+            </a>
         </li>
     </ul>
 

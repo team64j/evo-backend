@@ -8,6 +8,24 @@ html, body {
     width: 100%;
     min-width: 320px;
 }
+.app-resizer {
+    position: relative;
+    width: 2px;
+    flex-grow: 0;
+    background-color: var(--bs-gray-500);
+    cursor: col-resize;
+}
+.app-resizer:hover, .app-resizer.active {
+    background-color: var(--bs-blue);
+}
+.app-resizer::before {
+    content: "";
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    top: 0;
+    bottom: 0;
+}
 /**
  * Scrollbar
  */

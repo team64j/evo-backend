@@ -1,6 +1,6 @@
 {
-  "_axios-Ek7KZs63.js": {
-    "file": "assets/axios-Ek7KZs63.js",
+  "_axios-B-tMOEUT.js": {
+    "file": "assets/axios-B-tMOEUT.js",
     "name": "axios"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf": {
@@ -44,12 +44,12 @@
     "src": "resources/img/logo.svg"
   },
   "resources/js/app-auth.js": {
-    "file": "assets/app-auth-Bjs5h8RJ.js",
+    "file": "assets/app-auth-CDuOckfq.js",
     "name": "app-auth",
     "src": "resources/js/app-auth.js",
     "isEntry": true,
     "imports": [
-      "_axios-Ek7KZs63.js"
+      "_axios-B-tMOEUT.js"
     ],
     "css": [
       "assets/app-auth-BUi3hGo-.css"
@@ -68,12 +68,12 @@
     ]
   },
   "resources/js/app-page.js": {
-    "file": "assets/app-page-DnrHOTtN.js",
+    "file": "assets/app-page-CZbywm2B.js",
     "name": "app-page",
     "src": "resources/js/app-page.js",
     "isEntry": true,
     "imports": [
-      "_axios-Ek7KZs63.js"
+      "_axios-B-tMOEUT.js"
     ],
     "css": [
       "assets/app-page-DQbrU9le.css"
@@ -90,15 +90,15 @@
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-CkEa55NJ.js",
+    "file": "assets/app-eN7c7UWa.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "imports": [
-      "_axios-Ek7KZs63.js"
+      "_axios-B-tMOEUT.js"
     ],
     "css": [
-      "assets/app-BmgSetLy.css"
+      "assets/app-DqlTsnUC.css"
     ],
     "assets": [
       "assets/fa-brands-400-Ch568Ea9.woff2",
