@@ -34,6 +34,11 @@ class AppServiceProvider extends ServiceProvider
                 ->toArray();
         }));
 
+        $version = require_once __DIR__ . '/../../../core/factory/version.php';
+
+        Config::set('version', $version);
+        Config::set('app.name', $version['branch']);
+
         $this->app->setLocale(Config::get('global.manager_language', 'en'));
     }
 }

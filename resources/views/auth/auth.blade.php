@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ config('global.manager_language') }}">
+<html lang="{{ app()->getLocale() }}" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -8,12 +8,14 @@
     <title>{{ config('global.site_name') }} — Evo Manager</title>
     @vite('resources/js/app-auth.js')
 </head>
-<body id="app-evo-auth" data-bs-theme="dark">
-<div class="h-100">
-    <div class="row m-0 h-100">
-        <div class="col-auto bg-dark bg-opacity-75 text-light py-5 px-4" style="width: 25rem">
-            @yield('content')
-        </div>
+<body id="app-evo-auth">
+@php(
+    $position = config('global.login_form_position')
+)
+<div class="d-flex h-100 overflow-hidden {{ $position == 'left' ? 'justify-content-start' : ($position == 'right' ? 'justify-content-end' : 'justify-content-center align-items-center') }}">
+    <div class="bg-black bg-opacity-75 mw-100 {{ $position == 'center' ? 'p-4 rounded-4' : 'p-3' }}"
+         style="width: {{ $position == 'center' ? '30' : '25' }}rem">
+        @yield('content')
     </div>
 </div>
 </body>

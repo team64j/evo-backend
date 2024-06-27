@@ -39,8 +39,12 @@
     "file": "assets/login-background-Cgmf6hWT.jpg",
     "src": "resources/img/login-background.jpg"
   },
+  "resources/img/logo.svg": {
+    "file": "assets/logo-n4S_xBwO.svg",
+    "src": "resources/img/logo.svg"
+  },
   "resources/js/app-auth.js": {
-    "file": "assets/app-auth-Bkdc_mnQ.js",
+    "file": "assets/app-auth-Bjs5h8RJ.js",
     "name": "app-auth",
     "src": "resources/js/app-auth.js",
     "isEntry": true,
@@ -48,7 +52,7 @@
       "_axios-Ek7KZs63.js"
     ],
     "css": [
-      "assets/app-auth-BBG-_hTR.css"
+      "assets/app-auth-BUi3hGo-.css"
     ],
     "assets": [
       "assets/fa-brands-400-Ch568Ea9.woff2",
@@ -59,11 +63,12 @@
       "assets/fa-solid-900-Cm9M9sZB.ttf",
       "assets/fa-v4compatibility-BRdYr4HJ.woff2",
       "assets/fa-v4compatibility-DLBX5pNp.ttf",
-      "assets/login-background-Cgmf6hWT.jpg"
+      "assets/login-background-Cgmf6hWT.jpg",
+      "assets/logo-n4S_xBwO.svg"
     ]
   },
   "resources/js/app-page.js": {
-    "file": "assets/app-page-0ub16j29.js",
+    "file": "assets/app-page-Derj9xXo.js",
     "name": "app-page",
     "src": "resources/js/app-page.js",
     "isEntry": true,
@@ -71,7 +76,7 @@
       "_axios-Ek7KZs63.js"
     ],
     "css": [
-      "assets/app-page-CwzHDg61.css"
+      "assets/app-page-DQbrU9le.css"
     ],
     "assets": [
       "assets/fa-brands-400-Ch568Ea9.woff2",
@@ -85,7 +90,7 @@
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-BD2Pkoip.js",
+    "file": "assets/app-aT1lGrR_.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -93,7 +98,7 @@
       "_axios-Ek7KZs63.js"
     ],
     "css": [
-      "assets/app-Cz-KeWqz.css"
+      "assets/app-BmgSetLy.css"
     ],
     "assets": [
       "assets/fa-brands-400-Ch568Ea9.woff2",

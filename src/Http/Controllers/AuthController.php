@@ -11,6 +11,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Lang;
 
 class AuthController extends Controller
 {
@@ -25,6 +26,9 @@ class AuthController extends Controller
             $credentials = $request->validate([
                 'username' => ['required'],
                 'password' => ['required'],
+            ], attributes: [
+                'username' => '[' . Lang::get('global.username') . ']',
+                'password' => '[' . Lang::get('global.password') . ']',
             ]);
 
             if (Auth::attempt($credentials, $request->boolean('remember'))) {

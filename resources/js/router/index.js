@@ -45,7 +45,7 @@ const index = createRouter({
 
 index.beforeEach((to, from, next) => {
   if (to.path === '/logout') {
-    location.href = '/logout'
+    location.href = location.pathname + 'logout'
   } else {
     next()
   }
