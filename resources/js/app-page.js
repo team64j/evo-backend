@@ -27,6 +27,11 @@ window['app'] = vue.createApp({
       top.postMessage({
         closeTab: true
       }, '*')
+    },
+    routeTo (to) {
+      top.postMessage({
+        routeTo: to
+      }, '*')
     }
   }
 }).mount('#app-evo-page')

@@ -35,6 +35,10 @@ export default {
             return this.closeTab()
           }
 
+          if (event.data.routeTo) {
+            return this.routeTo(event.data.routeTo)
+          }
+
           const meta = {}
 
           if (event.data?.title) {
@@ -148,6 +152,9 @@ export default {
     },
     onLoad (event) {
       event.target.contentWindow?.postMessage({ dark: 'dark' }, '*')
+    },
+    routeTo (to) {
+      router.to(to)
     }
   }
 }
