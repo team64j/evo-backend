@@ -27,18 +27,16 @@ class ElementsController extends Controller
                     ->paginate(20);
                 break;
 
-            case 'tvs':
+            case 'tmplvars':
                 $icon = 'fa fa-list-alt';
-                $element = 'tmplvars';
                 $elements = SiteTmplvar::query()
                     ->paginate(20);
                 break;
 
-            case 'chunks':
+            case 'htmlsnippets':
                 $icon = 'fa fa-th-large';
-                $element = 'htmlsnippets';
                 $elements = SiteHtmlsnippet::query()
-                    ->paginate(20);
+                    ->paginate(4);
                 break;
 
             case 'snippets':
@@ -66,6 +64,9 @@ class ElementsController extends Controller
                 $elements = Category::query()
                     ->paginate(20);
                 break;
+
+            default:
+                abort(404);
         }
 
         return view('page.elements', [

@@ -13,13 +13,13 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="elements/tvs"
+            <a href="elements/tmplvars"
                class="nav-link py-1 text-nowrap {{ $element == 'tmplvars' ? 'active' : '' }}">
                 @lang('global.tmplvars')
             </a>
         </li>
         <li class="nav-item">
-            <a href="elements/chunks"
+            <a href="elements/htmlsnippets"
                class="nav-link py-1 text-nowrap {{ $element == 'htmlsnippets' ? 'active' : '' }}">
                 @lang('global.htmlsnippets')
             </a>
