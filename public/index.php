@@ -48,8 +48,7 @@ $app = require_once dirname(__DIR__) . '/bootstrap/app.php';
 
 $kernel = $app->make(Kernel::class);
 
-//$_SERVER['REQUEST_URI'] = '/';
-//$_SERVER['DOCUMENT_ROOT'] .= '/backend';
+$_SERVER['SCRIPT_NAME'] = '/backend/index.php';
 
 $response = $kernel->handle(
     $request = Request::capture()

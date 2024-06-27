@@ -1,4 +1,8 @@
 {
+  "_axios-Ek7KZs63.js": {
+    "file": "assets/axios-Ek7KZs63.js",
+    "name": "axios"
+  },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf": {
     "file": "assets/fa-brands-400-DHHcbFjz.ttf",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf"
@@ -31,13 +35,65 @@
     "file": "assets/fa-v4compatibility-BRdYr4HJ.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2"
   },
+  "resources/img/login-background.jpg": {
+    "file": "assets/login-background-Cgmf6hWT.jpg",
+    "src": "resources/img/login-background.jpg"
+  },
+  "resources/js/app-auth.js": {
+    "file": "assets/app-auth-Bkdc_mnQ.js",
+    "name": "app-auth",
+    "src": "resources/js/app-auth.js",
+    "isEntry": true,
+    "imports": [
+      "_axios-Ek7KZs63.js"
+    ],
+    "css": [
+      "assets/app-auth-BBG-_hTR.css"
+    ],
+    "assets": [
+      "assets/fa-brands-400-Ch568Ea9.woff2",
+      "assets/fa-brands-400-DHHcbFjz.ttf",
+      "assets/fa-regular-400-9VThgXHM.woff2",
+      "assets/fa-regular-400-C54-fRIQ.ttf",
+      "assets/fa-solid-900-QWY35r5r.woff2",
+      "assets/fa-solid-900-Cm9M9sZB.ttf",
+      "assets/fa-v4compatibility-BRdYr4HJ.woff2",
+      "assets/fa-v4compatibility-DLBX5pNp.ttf",
+      "assets/login-background-Cgmf6hWT.jpg"
+    ]
+  },
+  "resources/js/app-page.js": {
+    "file": "assets/app-page-0ub16j29.js",
+    "name": "app-page",
+    "src": "resources/js/app-page.js",
+    "isEntry": true,
+    "imports": [
+      "_axios-Ek7KZs63.js"
+    ],
+    "css": [
+      "assets/app-page-CwzHDg61.css"
+    ],
+    "assets": [
+      "assets/fa-brands-400-Ch568Ea9.woff2",
+      "assets/fa-brands-400-DHHcbFjz.ttf",
+      "assets/fa-regular-400-9VThgXHM.woff2",
+      "assets/fa-regular-400-C54-fRIQ.ttf",
+      "assets/fa-solid-900-QWY35r5r.woff2",
+      "assets/fa-solid-900-Cm9M9sZB.ttf",
+      "assets/fa-v4compatibility-BRdYr4HJ.woff2",
+      "assets/fa-v4compatibility-DLBX5pNp.ttf"
+    ]
+  },
   "resources/js/app.js": {
-    "file": "assets/app-BjsKqfUm.js",
+    "file": "assets/app-MGT8MBzX.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
+    "imports": [
+      "_axios-Ek7KZs63.js"
+    ],
     "css": [
-      "assets/app-BQl69-kd.css"
+      "assets/app-Cz-KeWqz.css"
     ],
     "assets": [
       "assets/fa-brands-400-Ch568Ea9.woff2",

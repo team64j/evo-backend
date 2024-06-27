@@ -16,7 +16,7 @@ export default {
   <ul>
     <li v-for="i in data" :class="'app-main-menu__' + getId(i.id)">
       <template v-if="i.title || i.icon">
-        <a v-if="i.to" :href="i.to">
+        <a v-if="i.to" v-bind="typeof i.to === 'string' ? { href: i.to } : i.to">
           <i v-if="i.icon" :class="i.icon"/>
           <span v-if="i.title" v-html="i.title"/>
           <i v-if="i.children || i.url" class="fa fa-angle-down toggle"/>

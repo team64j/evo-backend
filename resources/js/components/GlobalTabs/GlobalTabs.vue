@@ -1,5 +1,6 @@
 <script>
-import router from '../../router.js'
+import router from '../../router'
+import { mergeWith } from 'lodash'
 
 export default {
   name: 'GlobalTabs',
@@ -30,6 +31,10 @@ export default {
 
       window.addEventListener('message', event => {
         if (event.data) {
+          if (event.data.closeTab) {
+            return this.closeTab()
+          }
+
           const meta = {}
 
           if (event.data?.title) {
@@ -83,9 +88,9 @@ export default {
     setTab (data) {
       if (data.key) {
         const index = this.keys.indexOf(data.key)
-        index > -1 && window._.mergeWith(this.tabs[index], data)
+        index > -1 && mergeWith(this.tabs[index], data)
       } else {
-        this.tabs.map(i => i.active && window._.mergeWith(i, data))
+        this.tabs.map(i => i.active && mergeWith(i, data))
       }
     },
     closeTab (callback) {
@@ -141,7 +146,7 @@ export default {
     find (data) {
       return this.tabs.filter(i => router.key(i, data))[0] || null
     },
-    onLoad (event, meta) {
+    onLoad (event) {
       event.target.contentWindow?.postMessage({ dark: 'dark' }, '*')
     }
   }
@@ -170,8 +175,8 @@ export default {
       </button>
     </div>
     <div class="app-global-tabs__frames">
-      <template v-for="{ path, meta } in tabs" :key="path">
-        <iframe v-if="keys.includes(path)" v-show="$route.path === path" :src="path" @load="onLoad($event, meta)"/>
+      <template v-for="{ path, fullPath } in tabs" :key="path">
+        <iframe v-if="keys.includes(path)" v-show="$route.path === path" :src="'.' + path" @load="onLoad"/>
       </template>
     </div>
   </div>
@@ -206,6 +211,7 @@ export default {
 }
 .app-global-tabs__icon i {
   color: white !important;
+  font-size: 1rem !important;
 }
 .app-global-tabs__icon .spinner-border {
   width: 1rem;

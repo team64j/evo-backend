@@ -153,7 +153,10 @@ class AppController extends Controller
                     [
                         'id' => 'preview',
                         'icon' => 'fa fa-desktop',
-                        'to' => '/',
+                        'to' => [
+                            'href' => config('global.site_url', '/'),
+                            'target' => '_blank',
+                        ],
                     ],
                     [
                         'id' => 'manager',

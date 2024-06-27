@@ -8,29 +8,20 @@ use EvoManager\Http\Controllers\ElementsController;
 use EvoManager\Http\Controllers\TemplateController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-Route::middleware('auth:web')->group(fn() => [
-    Route::withoutMiddleware(['auth:web'])->match(['post', 'get'], 'login', [AuthController::class, 'login'])
-        ->name('login'),
-    Route::withoutMiddleware(['auth:web'])->match(['post', 'get'], 'logout', [AuthController::class, 'logout'])
-        ->name('logout'),
+Route::middleware('auth:web')/*->prefix('/backend')*/->group(fn() => [
+    Route::withoutMiddleware(['auth:web'])->group(fn() => [
+        Route::match(['post', 'get'], 'login', [AuthController::class, 'login'])->name('login'),
+        Route::match(['post', 'get'], 'logout', [AuthController::class, 'logout'])->name('logout'),
+    ]),
 
     Route::get('/', [AppController::class, 'index'])->name('home'),
 
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard'),
-    Route::get('/configuration', [ConfigurationController::class, 'index'])->name('configuration'),
+    Route::get('/dashboard', [DashboardController::class, 'index']),
 
-    Route::get('/elements/{element}', [ElementsController::class, 'index'])->name('elements'),
+    Route::get('/configuration', [ConfigurationController::class, 'read']),
+    Route::post('/configuration', [ConfigurationController::class, 'update']),
+
+    Route::get('/elements/{element}', [ElementsController::class, 'index']),
 
     Route::apiResource('templates', TemplateController::class),
 ]);

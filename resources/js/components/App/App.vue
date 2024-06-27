@@ -2,7 +2,7 @@
 import MainMenu from '../MainMenu/MainMenu.vue'
 import Tree from '../Tree/Tree.vue'
 import GlobalTabs from '../GlobalTabs/GlobalTabs.vue'
-import router from '../../router.js'
+import router from '../../router'
 
 export default {
   name: 'App',
@@ -48,7 +48,7 @@ export default {
 </script>
 
 <template>
-  <div class="app">
+  <div class="d-flex flex-column h-100 overflow-hidden">
     <div class="app-main-menu">
       <MainMenu :data="data['menu']"/>
     </div>

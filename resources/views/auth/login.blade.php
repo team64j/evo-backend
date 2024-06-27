@@ -29,12 +29,15 @@
 
         <div class="d-flex justify-content-between align-items-center">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                <input class="form-check-input" type="checkbox" name="remember" id="remember"
+                        @checked(old('remember'))>
                 <label class="form-check-label text-muted" for="remember">
                     @lang('global.remember_username')
                 </label>
             </div>
-            <button class="btn btn-lg btn-success px-4"><strong>@lang('global.login_button')</strong></button>
+            <button type="submit" class="btn btn-lg btn-success px-4">
+                <strong>@lang('global.login_button')</strong>
+            </button>
         </div>
 
     </form>

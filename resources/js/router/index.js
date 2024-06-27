@@ -39,9 +39,17 @@ const routes = [
   }
 ]
 
-const router = createRouter({
+const index = createRouter({
   history: createWebHashHistory(),
   routes
+})
+
+index.beforeEach((to, from, next) => {
+  if (to.path === '/logout') {
+    location.href = '/logout'
+  } else {
+    next()
+  }
 })
 
 /**
@@ -49,7 +57,7 @@ const router = createRouter({
  * @param compareRoute
  * @returns {string|boolean}
  */
-router.key = (route, compareRoute = null) => {
+index.key = (route, compareRoute = null) => {
   let queryKey
 
   if (compareRoute) {
@@ -76,9 +84,9 @@ router.key = (route, compareRoute = null) => {
 
 /**
  * @param route - Raw route location to resolve
- * @see router.resolve()
+ * @see index.resolve()
  */
-router.parse = (route) => {
+index.parse = (route) => {
   if (route.path && route.params) {
     const query = route.path.split('?')[1] ?? null
 
@@ -111,13 +119,13 @@ router.parse = (route) => {
     })
   }
 
-  return router.resolve(route)
+  return index.resolve(route)
 }
 
 /**
  * @param route - Raw route location to push
- * @see router.push()
+ * @see index.push()
  */
-router.to = (route) => router.push(router.parse(route))
+index.to = (route) => index.push(index.parse(route))
 
-export default router
+export default index

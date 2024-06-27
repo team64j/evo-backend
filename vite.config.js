@@ -8,7 +8,9 @@ export default defineConfig({
     vue(),
     laravel({
       input: [
-        'resources/js/app.js'
+        'resources/js/app.js',
+        'resources/js/app-page.js',
+        'resources/js/app-auth.js',
       ],
       refresh: true
     })
