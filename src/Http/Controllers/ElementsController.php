@@ -66,7 +66,7 @@ class ElementsController extends Controller
                 break;
         }
 
-        return view('pages.elements', [
+        return view('page.elements', [
             'icon' => $icon,
             'element' => $element,
             'elements' => $elements,

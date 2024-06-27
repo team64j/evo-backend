@@ -1,4 +1,4 @@
-@extends('auth.auth')
+@extends('auth')
 
 @section('content')
     <form method="post" class="p-3">

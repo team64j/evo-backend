@@ -14,7 +14,7 @@ class ConfigurationController
      */
     public function read(): View
     {
-        return view('pages.configuration');
+        return view('page.configuration');
     }
 
     /**
@@ -24,6 +24,6 @@ class ConfigurationController
      */
     public function update(Request $request): View
     {
-        return view('pages.configuration');
+        return view('page.configuration');
     }
 }

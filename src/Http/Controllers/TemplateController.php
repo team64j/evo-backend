@@ -8,6 +8,6 @@ class TemplateController extends Controller
 {
     public function index()
     {
-        return view('pages.templates');
+        return view('page.templates');
     }
 }
