@@ -16,7 +16,7 @@ window['app'] = vue.createApp({
       let { target } = event
       while (target && target.tagName !== 'A') target = target.parentNode
       // handle only links that do not reference external resources
-      if (target && target.matches('a:not([href*=\'://\'])') && target.href && window.frameElement) {
+      if (target/* && target.matches('a:not([href*=\'://\'])')*/ && target.href && window.frameElement) {
         // some sanity checks taken from vue-router:
         // https://github.com/vuejs/vue-router/blob/dev/src/components/link.js#L106
         const { altKey, ctrlKey, metaKey, shiftKey, button, defaultPrevented } = event
@@ -37,7 +37,7 @@ window['app'] = vue.createApp({
         if (window.location.pathname !== to && event.preventDefault) {
           event.preventDefault()
           top.postMessage({
-            routeTo: to
+            routeTo: to + url.search
           }, '*')
         }
       }
@@ -63,6 +63,13 @@ window['app'] = vue.createApp({
       top.postMessage({
         closeTab: true
       }, '*')
+    },
+    actionNew (data) {
+      if (data.to) {
+        top.postMessage({
+          routeTo: data.to
+        }, '*')
+      }
     },
     routeTo (to) {
       top.postMessage({

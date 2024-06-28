@@ -1,55 +1,30 @@
 @extends('page')
 
 @section('title')
-    @include('partials.title', ['icon' => $icon, 'title' => __('global.' . $element), 'help' => $help])
+    @component('partials.title', ['icon' => $icon, 'help' => $help])
+        @lang('global.' . $element)
+    @endcomponent
+@endsection
+
+@section('actions')
+    @include('partials.actions', [
+        'new' => [
+            'title' => __('global.new_template'),
+            'to' => url('/templates/new'),
+        ],
+    ])
+@endsection
+
+@section('navigations')
+    @if(!empty($navigations))
+        @include('partials.pills', [
+            'active' => $element,
+            'data' => $navigations,
+        ])
+    @endif
 @endsection
 
 @section('content')
-    <ul class="nav nav-pills mb-3 flex-grow-0 d-flex flex-nowrap px-3 overflow-auto">
-        <li class="nav-item">
-            <a href="elements/templates"
-               class="nav-link py-1 text-nowrap {{ $element == 'templates' ? 'active' : '' }}">
-                @lang('global.templates')
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="elements/tmplvars"
-               class="nav-link py-1 text-nowrap {{ $element == 'tmplvars' ? 'active' : '' }}">
-                @lang('global.tmplvars')
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="elements/htmlsnippets"
-               class="nav-link py-1 text-nowrap {{ $element == 'htmlsnippets' ? 'active' : '' }}">
-                @lang('global.htmlsnippets')
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="elements/snippets"
-               class="nav-link py-1 text-nowrap {{ $element == 'snippets' ? 'active' : '' }}">
-                @lang('global.snippets')
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="elements/plugins"
-               class="nav-link py-1 text-nowrap {{ $element == 'plugins' ? 'active' : '' }}">
-                @lang('global.plugins')
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="elements/modules"
-               class="nav-link py-1 text-nowrap {{ $element == 'modules' ? 'active' : '' }}">
-                @lang('global.modules')
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="elements/categories"
-               class="nav-link py-1 text-nowrap {{ $element == 'categories' ? 'active' : '' }}">
-                @lang('global.categories')
-            </a>
-        </li>
-    </ul>
-
     @php($category = -1)
 
     <table class="table">
@@ -78,31 +53,34 @@
                 @endif
             @elseif($key == 0)
                 <tbody>
-            @endisset
+                @endisset
 
-            <tr>
-                <td>
-                    {{ $item->id }}
-                </td>
-                <td>
-                    <i class="{{ $icon }}"></i>
-                    {{ $item->name }}
-                </td>
-                <td>
-                    <small class="text-muted">{!! $item->description ?? '' !!}</small>
-                </td>
-            </tr>
-            @endforeach
-
-            </tbody>
-            @if($elements->hasPages())
-                <tfoot>
                 <tr>
-                    <td colspan="3">
-                        {{ $elements->links() }}
+                    <td>
+                        {{ $item->id }}
+                    </td>
+                    <td nowrap>
+                        @if(!empty($icon))
+                            <i class="{{ $icon }} me-2"></i>
+                        @endif
+
+                        <a href="{{ url($element . '/' . $item->getkey()) }}">{{ $item->name }}</a>
+                    </td>
+                    <td>
+                        <small class="text-muted">{!! $item->description ?? '' !!}</small>
                     </td>
                 </tr>
-                </tfoot>
-            @endif
+                @endforeach
+
+                </tbody>
+                @if($elements->hasPages())
+                    <tfoot>
+                    <tr>
+                        <td colspan="3">
+                            {{ $elements->links() }}
+                        </td>
+                    </tr>
+                    </tfoot>
+                @endif
     </table>
 @endsection

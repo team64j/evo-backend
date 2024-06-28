@@ -116,6 +116,8 @@ index.parse = (route) => {
         }
       }
     })
+  } else if (typeof route === 'string') {
+    route = route.replace(document.baseURI, '/')
   }
 
   return index.resolve(route)

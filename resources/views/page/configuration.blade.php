@@ -1,7 +1,9 @@
 @extends('page')
 
 @section('title')
-    @include('partials.title', ['icon' => 'fa-sliders', 'title' => __('global.settings_title')])
+    @component('partials.title', ['icon' => 'fa fa-sliders'])
+        @lang('global.settings_title')
+    @endcomponent
 @endsection
 
 @section('actions')

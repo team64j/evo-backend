@@ -9,3 +9,13 @@
         @lang('global.save')
     </button>
 @endisset
+
+@isset($new)
+    <button type="button" class="btn btn-sm btn-success" onclick="app.actionNew({{ json_encode($new) }})">
+        @if(empty($new))
+            @lang('global.new')
+        @else
+            {{ $new['title'] ?? '' }}
+        @endif
+    </button>
+@endisset

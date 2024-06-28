@@ -13,7 +13,7 @@ use EvolutionCMS\Models\SiteTemplate;
 use EvolutionCMS\Models\SiteTmplvar;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Validation\ValidationException;
 
 class ElementsController extends Controller
@@ -25,6 +25,7 @@ class ElementsController extends Controller
     {
         $help = '';
         $icon = '';
+        $actions = [];
         $elements = [];
 
         switch ($element) {
@@ -32,51 +33,56 @@ class ElementsController extends Controller
                 $help = __('global.template_management_msg');
                 $icon = 'fa fa-newspaper';
                 $elements = SiteTemplate::query()
-                    ->paginate(20);
+                    ->paginate(Config::get('global.number_of_results'))
+                    ->appends($request->query());
                 break;
 
             case 'tmplvars':
                 $help = __('global.tmplvars_management_msg');
                 $icon = 'fa fa-list-alt';
                 $elements = SiteTmplvar::query()
-                    ->paginate(20);
+                    ->paginate(Config::get('global.number_of_results'))
+                    ->appends($request->query());
                 break;
 
             case 'htmlsnippets':
                 $help = __('global.htmlsnippet_management_msg');
                 $icon = 'fa fa-th-large';
                 $elements = SiteHtmlsnippet::query()
-                    ->paginate(4);
+                    ->paginate(Config::get('global.number_of_results'))
+                    ->appends($request->query());
                 break;
 
             case 'snippets':
                 $help = __('global.snippet_management_msg');
                 $icon = 'fa fa-code';
                 $elements = SiteSnippet::query()
-                    ->paginate(20);
+                    ->paginate(Config::get('global.number_of_results'))
+                    ->appends($request->query());
                 break;
 
             case 'plugins':
                 $help = __('global.plugin_management_msg');
                 $icon = 'fa fa-plug';
                 $elements = SitePlugin::query()
-                    ->with('categories')
-                    ->orderBy('category')
-                    ->paginate(2);
+                    ->paginate(Config::get('global.number_of_results'))
+                    ->appends($request->query());
                 break;
 
             case 'modules':
                 $help = __('global.module_management_msg');
                 $icon = 'fa fa-cube';
                 $elements = SiteModule::query()
-                    ->paginate(20);
+                    ->paginate(Config::get('global.number_of_results'))
+                    ->appends($request->query());
                 break;
 
             case 'categories':
-                //$help = __('global.category_management_msg');
+                $help = null;
                 $icon = 'fa fa-object-group';
                 $elements = Category::query()
-                    ->paginate(20);
+                    ->paginate(Config::get('global.number_of_results'))
+                    ->appends($request->query());
                 break;
 
             default:
@@ -86,6 +92,44 @@ class ElementsController extends Controller
         return view('page.elements', [
             'help' => $help,
             'icon' => $icon,
+            'actions' => $actions,
+            'navigations' => [
+                [
+                    'id' => 'templates',
+                    'title' => __('global.templates'),
+                    'to' => url('/elements/templates'),
+                ],
+                [
+                    'id' => 'tmplvars',
+                    'title' => __('global.tmplvars'),
+                    'to' => url('/elements/tmplvars'),
+                ],
+                [
+                    'id' => 'htmlsnippets',
+                    'title' => __('global.htmlsnippets'),
+                    'to' => url('/elements/htmlsnippets'),
+                ],
+                [
+                    'id' => 'snippets',
+                    'title' => __('global.snippets'),
+                    'to' => url('/elements/snippets'),
+                ],
+                [
+                    'id' => 'plugins',
+                    'title' => __('global.plugins'),
+                    'to' => url('/elements/plugins'),
+                ],
+                [
+                    'id' => 'modules',
+                    'title' => __('global.modules'),
+                    'to' => url('/elements/modules'),
+                ],
+                [
+                    'id' => 'categories',
+                    'title' => __('global.categories'),
+                    'to' => url('/elements/categories'),
+                ],
+            ],
             'element' => $element,
             'elements' => $elements,
         ]);

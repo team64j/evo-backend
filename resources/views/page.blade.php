@@ -11,14 +11,20 @@
 </head>
 <body id="app-evo-page">
 <div class="h-100 d-flex flex-column">
-    <div class="position-fixed left-0 top-0 w-100 p-1 d-flex justify-content-end">
+    <div class="position-fixed end-0 top-0 p-1 d-flex justify-content-end">
         @yield('actions')
     </div>
     <div class="flex-grow-0 d-flex flex-column">
         @yield('title')
     </div>
+    <div class="flex-grow-0 d-flex flex-column">
+        @yield('navigations')
+    </div>
     <div class="flex-grow-1 d-flex flex-column">
         @yield('content')
+    </div>
+    <div class="flex-grow-0 d-flex flex-column">
+        @yield('crumbs')
     </div>
 </div>
 </body>

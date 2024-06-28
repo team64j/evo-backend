@@ -183,7 +183,7 @@ export default {
     </div>
     <div class="app-global-tabs__frames">
       <template v-for="{ path, fullPath } in tabs" :key="path">
-        <iframe v-if="keys.includes(path)" v-show="$route.path === path" :src="'.' + path" @load="onLoad"/>
+        <iframe v-if="keys.includes(path)" v-show="$route.path === path" :src="'.' + fullPath" @load="onLoad"/>
       </template>
     </div>
   </div>

@@ -23,5 +23,7 @@ Route::middleware('auth:web')/*->prefix('/backend')*/->group(fn() => [
 
     Route::get('/elements/{element}', [ElementsController::class, 'index']),
 
-    Route::apiResource('templates', TemplateController::class),
+    Route::apiResources([
+        'templates' => TemplateController::class
+    ]) ?? null,
 ]);
