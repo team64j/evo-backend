@@ -7,6 +7,7 @@ namespace EvoManager\Http\Controllers;
 use EvolutionCMS\Models\SiteTemplate;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 
 class TemplateController extends Controller
 {
@@ -19,7 +20,7 @@ class TemplateController extends Controller
             'help' => __('global.template_management_msg'),
             'icon' => 'fa fa-newspaper',
             'element' => 'templates',
-            'elements' => SiteTemplate::query()->paginate(20)->setPath('/'),
+            'elements' => SiteTemplate::query()->paginate(Config::get('global.number_of_results')),
         ]);
     }
 
