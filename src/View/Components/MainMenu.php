@@ -1,26 +1,36 @@
 <?php
 
-declare(strict_types=1);
+namespace EvoManager\View\Components;
 
-namespace EvoManager\Http\Controllers;
-
+use Closure;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\View\Component;
 
-class AppController extends Controller
+class MainMenu extends Component
 {
-    public function index()
+    /**
+     * Create a new component instance.
+     */
+    public function __construct(public array $children = [], public int $level = 1)
     {
-        return view('app', [
-            'data' => [
-                'menu' => $this->getMenu(),
-            ]
-        ]);
+        if (!$this->children) {
+            $this->children = $this->getChildren();
+        }
     }
 
     /**
-     * @return array
+     * Get the view / contents that represent the component.
      */
-    protected function getMenu(): array
+    public function render(): View|Closure|string
+    {
+        return view('components.main-menu');
+    }
+
+    /**
+     * @return array[]
+     */
+    protected function getChildren(): array
     {
         return [
             [
@@ -44,14 +54,14 @@ class AppController extends Controller
                                 'title' => __('global.templates'),
                                 'icon' => 'fa fa-newspaper',
                                 'to' => 'elements/templates',
-                                'url' => 'api/templates',
+                                'url' => 'api/templates/menu',
                             ],
                             [
                                 'id' => 'tmplvars',
                                 'title' => __('global.tmplvars'),
                                 'icon' => 'fa fa-list-alt',
                                 'to' => 'elements/tmplvars',
-                                'url' => 'api/tmplvars',
+                                'url' => 'api/tmplvars/menu',
                             ],
                             [
                                 'id' => 'htmlsnippets',

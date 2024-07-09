@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
+use EvoManager\Http\Controllers\Api\TemplateController;
+use EvoManager\Http\Controllers\Api\TvController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,6 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::any('/', fn() => app()->version());
+
+Route::get('/templates/menu', [TemplateController::class, 'menu']);
+Route::get('/tmplvars/menu', [TvController::class, 'menu']);

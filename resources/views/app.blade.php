@@ -9,6 +9,18 @@
     <title>{{ config('global.site_name') }} — Evo Manager</title>
     @vite('resources/js/app.js')
 </head>
-<body id="app-evo"></body>
-<script id="__DATA__" type="application/json">@json($data, JSON_UNESCAPED_UNICODE)</script>
+<body id="app-evo">
+<div class="d-flex flex-column h-100 overflow-hidden">
+    <div class="app-main-menu">
+        <x-main-menu></x-main-menu>
+    </div>
+    <div class="flex-grow-1 d-flex">
+        <x-tree></x-tree>
+        <div class="app-resizer"></div>
+        <x-global-tabs></x-global-tabs>
+    </div>
+</div>
+</body>
+@stack('scripts')
+{{--<script id="__DATA__" type="application/json">@json($data, JSON_UNESCAPED_UNICODE)</script>--}}
 </html>

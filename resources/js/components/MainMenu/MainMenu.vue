@@ -58,6 +58,9 @@ export default {
 .app-main-menu > ul > li > ul li {
   position: relative;
 }
+.app-main-menu > ul > li > ul > li > ul > li {
+  position: static;
+}
 .app-main-menu > ul > li > ul > li ul {
   display: none;
   position: absolute;
@@ -70,11 +73,15 @@ export default {
   border-bottom-left-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
 }
+.app-main-menu > ul > li > ul > li li > ul {
+  top: 0;
+  left: 100%
+}
 .app-main-menu > ul > li:last-of-type > ul > li ul {
   left: auto;
   right: 0;
 }
-.app-main-menu > ul > li > ul > li:hover ul {
+.app-main-menu > ul > li > ul li:hover > ul {
   display: flex;
 }
 .app-main-menu li > a, .app-main-menu li > span {

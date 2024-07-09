@@ -21,7 +21,7 @@ spl_autoload_register(function ($class) {
    }
 });
 
-$app->useAppPath('src');
+$app->useAppPath(dirname(__DIR__) . '/src');
 $app->useLangPath(dirname(__DIR__, 2) . '/core/lang');
 
 /*
