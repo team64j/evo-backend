@@ -31,10 +31,20 @@ class AppController extends Controller
                 'children' => [
                     [
                         'icon' => 'fa fa-bars',
+                        'values' => [
+                            [
+                                'icon' => 'fa fa-bars',
+                                'value' => true,
+                            ],
+                            [
+                                'icon' => 'fa fa-ellipsis-vertical',
+                                'value' => false,
+                            ],
+                        ],
                     ],
                     [
                         'icon' => 'fa fa-home',
-                        'to' => 'dashboard',
+                        'to' => '/dashboard',
                     ],
                     [
                         'title' => __('global.elements'),
@@ -43,49 +53,49 @@ class AppController extends Controller
                             [
                                 'title' => __('global.templates'),
                                 'icon' => 'fa fa-newspaper',
-                                'to' => 'elements/templates',
+                                'to' => '/elements/templates',
                                 'url' => 'api/templates',
                             ],
                             [
                                 'title' => __('global.tmplvars'),
                                 'icon' => 'fa fa-list-alt',
-                                'to' => 'elements/tmplvars',
+                                'to' => '/elements/tmplvars',
                                 'url' => 'api/tmplvars',
                             ],
                             [
                                 'title' => __('global.htmlsnippets'),
                                 'icon' => 'fa fa-th-large',
-                                'to' => 'elements/htmlsnippets',
+                                'to' => '/elements/htmlsnippets',
                                 'url' => 'api/htmlsnippets',
                             ],
                             [
                                 'title' => __('global.snippets'),
                                 'icon' => 'fa fa-code',
-                                'to' => 'elements/snippets',
+                                'to' => '/elements/snippets',
                                 'url' => 'api/snippets',
                             ],
                             [
                                 'title' => __('global.plugins'),
                                 'icon' => 'fa fa-plug',
-                                'to' => 'elements/plugins',
+                                'to' => '/elements/plugins',
                                 'url' => 'api/plugins',
                             ],
                             [
                                 'title' => __('global.modules'),
                                 'icon' => 'fa fa-cube',
-                                'to' => 'elements/modules',
+                                'to' => '/elements/modules',
                                 'url' => 'api/modules',
                             ],
                             [
                                 'title' => __('global.categories'),
                                 'icon' => 'fa fa-object-group',
-                                'to' => 'elements/categories',
+                                'to' => '/elements/categories',
                                 'url' => 'api/categories',
                             ],
                             [
                                 'title' => __('global.files'),
                                 'icon' => 'fa fa-folder-open',
-                                'to' => 'files',
+                                'to' => '/files',
                             ],
                         ],
                     ],
@@ -101,19 +111,19 @@ class AppController extends Controller
                             [
                                 'title' => __('global.users'),
                                 'icon' => 'fa fa-user',
-                                'to' => 'users',
+                                'to' => '/users',
                                 'url' => 'api/users',
                             ],
                             [
                                 'title' => __('global.role_management_title'),
                                 'icon' => 'fa fa-legal',
-                                'to' => 'roles',
+                                'to' => '/roles',
                                 'url' => 'api/roles',
                             ],
                             [
                                 'title' => __('global.web_permissions'),
                                 'icon' => 'fa fa-male',
-                                'to' => 'permissions',
+                                'to' => '/permissions',
                             ],
                         ],
                     ],
@@ -124,7 +134,7 @@ class AppController extends Controller
                             [
                                 'title' => __('global.refresh_site'),
                                 'icon' => 'fa fa-recycle',
-                                'to' => 'cache',
+                                'to' => '/cache',
                             ],
                         ],
                     ],
@@ -149,12 +159,12 @@ class AppController extends Controller
                             [
                                 'title' => __('global.change_password'),
                                 'icon' => 'fa fa-lock',
-                                'to' => 'password',
+                                'to' => '/password',
                             ],
                             [
                                 'title' => __('global.logout'),
                                 'icon' => 'fa fa-sign-out',
-                                'to' => 'logout',
+                                'to' => '/logout',
                             ],
                         ],
                     ],
@@ -164,27 +174,27 @@ class AppController extends Controller
                             [
                                 'title' => __('global.settings_config'),
                                 'icon' => 'fa fa-sliders',
-                                'to' => 'configuration',
+                                'to' => '/configuration',
                             ],
                             [
                                 'title' => __('global.site_schedule'),
                                 'icon' => 'fa fa-calendar',
-                                'to' => 'schedule',
+                                'to' => '/schedule',
                             ],
                             [
                                 'title' => __('global.eventlog_viewer'),
                                 'icon' => 'fa fa-exclamation-triangle',
-                                'to' => 'event-log',
+                                'to' => '/event-log',
                             ],
                             [
                                 'title' => __('global.view_logging'),
                                 'icon' => 'fa fa-user-secret',
-                                'to' => 'system-log',
+                                'to' => '/system-log',
                             ],
                             [
                                 'title' => __('global.view_sysinfo'),
                                 'icon' => 'fa fa-info-circle',
-                                'to' => 'system',
+                                'to' => '/system',
                             ],
                             [
                                 'title' => '<small class="d-block text-center">Evolution CE ' .

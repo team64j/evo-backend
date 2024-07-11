@@ -56,10 +56,7 @@ window['App'] = Vue.createApp({
   },
   template: `
     <div class="d-flex flex-column h-100 overflow-hidden">
-<!--      <GlobalMenu :data="data['menu']"/>-->
-      <div class="app-main-menu">
-        <MainMenu :data="data['menu']"/>
-      </div>
+      <main-menu :data="data['menu']"/>
       <div class="flex-grow-1 d-flex">
         <Tree/>
         <div class="app-resizer"/>

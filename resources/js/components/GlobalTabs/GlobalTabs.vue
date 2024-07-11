@@ -152,6 +152,12 @@ export default {
     },
     onLoad (event) {
       event.target.contentWindow?.postMessage({ dark: 'dark' }, '*')
+
+      event.target.contentDocument.addEventListener('click', event => {
+        window.postMessage({
+          eventClick: true
+        }, '*')
+      })
     },
     routeTo (to) {
       router.to(to)

@@ -124,19 +124,27 @@
     @apply grow text-center
 }
 .app-global-menu li .app-global-menu__filter {
-    @apply relative w-full px-3 py-1
+    position: relative;
+    width: 100%;
+    padding: .25rem 1rem;
 }
 .app-global-menu li .app-global-menu__filter input {
     @apply pl-2 pr-6 py-0.5 mt-[1px]
 }
 .app-global-menu li .app-global-menu__filter .app-global-menu__clear {
-    @apply text-rose-500 cursor-pointer absolute z-10 top-3 right-6
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    top: 1rem;
+    right: 1.5rem;
+    color: red;
 }
 .app-global-menu > ul > li > ul > li.app-global-menu__parent {
+    position: relative;
     @apply md:relative
 }
 .app-global-menu > ul > li > ul > li.app-global-menu__parent > ul {
-    @apply mt-1
+    margin-top: 0.25rem;
 }
 .app-global-menu > ul > li > ul li.app-global-menu__parent > ul {
     position: absolute;

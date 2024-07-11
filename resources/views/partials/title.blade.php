@@ -12,5 +12,5 @@
 </h1>
 
 @if(!empty($help))
-    <div class="alert alert-info mx-3" v-show="showHelpTitle" v-html="`{{ $help }}`"></div>
+    <div class="alert alert-info mx-3" style="display: none" v-show="showHelpTitle" v-html="`{{ $help }}`"></div>
 @endif
