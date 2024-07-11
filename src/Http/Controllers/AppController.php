@@ -4,11 +4,15 @@ declare(strict_types=1);
 
 namespace EvoManager\Http\Controllers;
 
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 
 class AppController extends Controller
 {
-    public function index()
+    /**
+     * @return View
+     */
+    public function index(): View
     {
         return view('app', [
             'data' => [
@@ -32,7 +36,7 @@ class AppController extends Controller
                     [
                         'id' => 'home',
                         'icon' => 'fa fa-home',
-                        'to' => route('home'),
+                        'to' => 'dashboard',
                     ],
                     [
                         'id' => 'elements',

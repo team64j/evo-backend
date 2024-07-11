@@ -27,7 +27,14 @@ export default defineConfig({
     }
   },
   plugins: [
-    vue(),
+    vue({
+      template: {
+        transformAssetUrls: {
+          base: null,
+          includeAbsolute: false
+        }
+      }
+    }),
     laravel({
       input: [
         'resources/js/app.js',

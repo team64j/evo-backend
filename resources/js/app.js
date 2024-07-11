@@ -1,24 +1,24 @@
 import '../css/app.css'
-import * as vue from 'vue'
+import * as Vue from 'vue'
 import axios from 'axios'
 import router from './router'
 import GlobalTabs from './components/GlobalTabs/GlobalTabs.vue'
 import MainMenu from './components/MainMenu/MainMenu.vue'
 import Tree from './components/Tree/Tree.vue'
 
-window['vue'] = vue
+window['Vue'] = Vue
 window['axios'] = axios
 //window['axios'].defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
 
-window['app'] = vue.createApp({/*
+window['app'] = Vue.createApp({
   components: { GlobalTabs, Tree, MainMenu },
   props: {
     data: Object
   },
   created () {
-    /!**
+    /**
      * @see https://dennisreimann.de/articles/delegating-html-links-to-vue-router.html
-     *!/
+     */
     window.addEventListener('click', event => {
       // ensure we use the link, in case the click has been received by a sub element
       let { target } = event
@@ -62,4 +62,4 @@ window['app'] = vue.createApp({/*
     </div>`
 }, {
   data: JSON.parse(document.getElementById('__DATA__').textContent)
-*/})/*.use(router).mount('#app-evo')*/
+}).use(router).mount('#app-evo')

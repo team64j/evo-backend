@@ -10,17 +10,9 @@
     @vite('resources/js/app.js')
 </head>
 <body id="app-evo">
-<div class="d-flex flex-column h-100 overflow-hidden">
-    <div class="app-main-menu">
-        <x-main-menu></x-main-menu>
-    </div>
-    <div class="flex-grow-1 d-flex">
-        <x-tree></x-tree>
-        <div class="app-resizer"></div>
-        <x-global-tabs></x-global-tabs>
-    </div>
-</div>
+<div class="d-flex flex-column h-100 overflow-hidden"></div>
 </body>
+@stack('styles')
 @stack('scripts')
-{{--<script id="__DATA__" type="application/json">@json($data, JSON_UNESCAPED_UNICODE)</script>--}}
+<script id="__DATA__" type="application/json">@json($data)</script>
 </html>

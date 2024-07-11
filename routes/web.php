@@ -16,7 +16,7 @@ Route::middleware('auth:web')/*->prefix('/backend')*/->group(fn() => [
 
     Route::get('/', [AppController::class, 'index'])->name('home'),
 
-    Route::get('/dashboard', [DashboardController::class, 'index']),
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard'),
 
     Route::get('/configuration', [ConfigurationController::class, 'read']),
     Route::post('/configuration', [ConfigurationController::class, 'update']),

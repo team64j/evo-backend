@@ -4,6 +4,7 @@ namespace EvoManager\View\Components;
 
 use Closure;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Session;
 use Illuminate\View\Component;
 
 class GlobalTabs extends Component
@@ -11,9 +12,17 @@ class GlobalTabs extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct(public array $tabs = [], public string $active = 'dashboard')
     {
-        //
+        $this->tabs = Session::get('tabs', [
+            [
+                'path' => '/dashboard',
+                'active' => true,
+                'meta' => [
+                    'icon' => 'fa fa-home'
+                ],
+            ]
+        ]);
     }
 
     /**

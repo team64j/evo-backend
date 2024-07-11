@@ -42,7 +42,7 @@ class MainMenu extends Component
                     [
                         'id' => 'home',
                         'icon' => 'fa fa-home',
-                        'to' => route('home'),
+                        'to' => 'dashboard',
                     ],
                     [
                         'id' => 'elements',
