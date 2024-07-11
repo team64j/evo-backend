@@ -1,7 +1,7 @@
 {
-  "_CXVG9R5b.js": {
-    "file": "assets/js/CXVG9R5b.js",
-    "name": "axios"
+  "_B8y_m9o_.js": {
+    "file": "assets/js/B8y_m9o_.js",
+    "name": "index"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf": {
     "file": "assets/fonts/DHHcbFjz.ttf",
@@ -44,12 +44,12 @@
     "src": "resources/img/logo.svg"
   },
   "resources/js/app-auth.js": {
-    "file": "assets/js/DZWODjqh.js",
+    "file": "assets/js/CHc0PCOP.js",
     "name": "app-auth",
     "src": "resources/js/app-auth.js",
     "isEntry": true,
     "imports": [
-      "_CXVG9R5b.js"
+      "_B8y_m9o_.js"
     ],
     "css": [
       "assets/css/Dw1zkGpm.css"
@@ -68,12 +68,12 @@
     ]
   },
   "resources/js/app-page.js": {
-    "file": "assets/js/Bw6Bbt8J.js",
+    "file": "assets/js/B9VaDNZ9.js",
     "name": "app-page",
     "src": "resources/js/app-page.js",
     "isEntry": true,
     "imports": [
-      "_CXVG9R5b.js"
+      "_B8y_m9o_.js"
     ],
     "css": [
       "assets/css/C4QpxGCT.css"
@@ -90,15 +90,15 @@
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/js/-ftJVByT.js",
+    "file": "assets/js/D_Fw6Cbv.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "imports": [
-      "_CXVG9R5b.js"
+      "_B8y_m9o_.js"
     ],
     "css": [
-      "assets/css/crrlExTk.css"
+      "assets/css/kDIiiev6.css"
     ],
     "assets": [
       "assets/fonts/Ch568Ea9.woff2",
@@ -110,5 +110,9 @@
       "assets/fonts/BRdYr4HJ.woff2",
       "assets/fonts/DLBX5pNp.ttf"
     ]
+  },
+  "resources/js/components/GlobalMenu/GlobalMenu.css": {
+    "file": "assets/css/D39mi-Et.css",
+    "src": "resources/js/components/GlobalMenu/GlobalMenu.css"
   }
 }

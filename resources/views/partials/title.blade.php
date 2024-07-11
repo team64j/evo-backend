@@ -6,12 +6,11 @@
     {{ $slot ?? $title ?? '' }}
 
     @if(!empty($help))
-        <i class="fa fa-question-circle fs-6 ms-2 text-muted"
-           role="button"
-           onclick="event.target.parentElement.nextElementSibling.classList.toggle('d-none')"></i>
+            <i class="fa fa-question-circle fs-6 ms-2 text-muted" role="button"
+               @click="showHelpTitle=!showHelpTitle"></i>
     @endif
 </h1>
 
 @if(!empty($help))
-    <div class="alert alert-info mx-3 d-none">{!! $help !!}</div>
+    <div class="alert alert-info mx-3" v-show="showHelpTitle" v-html="`{{ $help }}`"></div>
 @endif

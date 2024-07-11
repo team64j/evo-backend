@@ -1,17 +1,22 @@
 import '../css/app.css'
 import * as Vue from 'vue'
-import axios from 'axios'
+import * as Axios from 'axios'
 import router from './router'
 import GlobalTabs from './components/GlobalTabs/GlobalTabs.vue'
 import MainMenu from './components/MainMenu/MainMenu.vue'
 import Tree from './components/Tree/Tree.vue'
+import { defineComponent } from 'vue'
+import GlobalMenu from './components/GlobalMenu/GlobalMenu.vue'
 
-window['Vue'] = Vue
-window['axios'] = axios
+export default defineComponent({
+  components: { GlobalMenu }
+})
+
+window['Axios'] = Axios
 //window['axios'].defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
-
-window['app'] = Vue.createApp({
-  components: { GlobalTabs, Tree, MainMenu },
+window['Vue'] = Vue
+window['App'] = Vue.createApp({
+  components: { GlobalTabs, GlobalMenu, Tree, MainMenu },
   props: {
     data: Object
   },
@@ -51,6 +56,7 @@ window['app'] = Vue.createApp({
   },
   template: `
     <div class="d-flex flex-column h-100 overflow-hidden">
+<!--      <GlobalMenu :data="data['menu']"/>-->
       <div class="app-main-menu">
         <MainMenu :data="data['menu']"/>
       </div>

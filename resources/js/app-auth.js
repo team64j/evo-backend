@@ -1,8 +1,8 @@
 import '../css/app-auth.css'
-import * as vue from 'vue'
-import axios from 'axios'
+import * as Vue from 'vue'
+import * as Axios from 'axios'
 
-window['vue'] = vue
-window['axios'] = axios
-window['app'] = vue.createApp({}).mount('#app-evo-auth')
+window['Axios'] = Axios
+window['Vue'] = Vue
+window['App'] = Vue.createApp({}).mount('#app-evo-auth')
 

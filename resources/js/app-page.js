@@ -1,12 +1,17 @@
 import '../css/app-page.css'
-import * as vue from 'vue'
-import axios from 'axios'
+import * as Vue from 'vue'
+import * as Axios from 'axios'
 import * as boostrap from 'bootstrap'
 
-window['vue'] = vue
-window['axios'] = axios
-window['app'] = vue.createApp({
+window['Axios'] = Axios
+window['vue'] = Vue
+window['app'] = Vue.createApp({
   components: { boostrap },
+  data () {
+    return {
+      showHelpTitle: false
+    }
+  },
   created () {
     /**
      * @see https://dennisreimann.de/articles/delegating-html-links-to-vue-router.html

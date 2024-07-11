@@ -242,10 +242,6 @@ export default {
   color: var(--bs-red);
   opacity: 100%;
 }
-.app-global-tabs__tabs a:hover {
-  background-color: var(--bs-gray-800);
-  color: var(--bs-light);
-}
 .app-global-tabs__frames {
   flex-grow: 1;
   overflow: hidden;
