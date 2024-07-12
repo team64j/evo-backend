@@ -1,21 +1,17 @@
 @isset($cancel)
-    <button type="button" class="btn btn-sm btn-default" onclick="app.actionCancel()">
+    <button type="button" class="btn btn-sm btn-default" onclick="Evo.actionCancel()">
         @lang('global.cancel')
     </button>
 @endisset
 
 @isset($save)
-    <button type="button" class="btn btn-sm btn-success" onclick="app.actionSave()">
+    <button type="button" class="btn btn-sm btn-success" onclick="Evo.actionSave()">
         @lang('global.save')
     </button>
 @endisset
 
 @isset($new)
-    <button type="button" class="btn btn-sm btn-success" onclick="app.actionNew({{ json_encode($new) }})">
-        @if(empty($new))
-            @lang('global.new')
-        @else
-            {{ $new['title'] ?? '' }}
-        @endif
+    <button type="button" class="btn btn-sm btn-success" onclick="Evo.actionNew({{ json_encode($new) }})">
+        {{ $new['title'] ?? __('global.new') }}
     </button>
 @endisset

@@ -1,31 +1,37 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <base href="{{ url('/') }}/">
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ config('global.site_name') }} — Evo Manager</title>
-    @vite('resources/js/app-page.js')
-</head>
-<body id="app-evo-page">
-<div class="h-100 d-flex flex-column">
-    <div class="position-fixed end-0 top-0 p-1 d-flex justify-content-end">
-        @yield('actions')
+@component('components.html')
+    @push('styles')
+        @vite('resources/js/app-page.js')
+    @endpush
+
+    <div id="app-evo-page" class="h-100 d-flex flex-column">
+        @hasSection('actions')
+            <div class="position-fixed end-0 top-0 p-1 d-flex justify-content-end">
+                @yield('actions')
+            </div>
+        @endif
+
+        @hasSection('title')
+            <div class="flex-grow-0 d-flex flex-column">
+                @yield('title')
+            </div>
+        @endif
+
+        @hasSection('navigations')
+            <div class="flex-grow-0 d-flex flex-column">
+                @yield('navigations')
+            </div>
+        @endif
+
+        @hasSection('content')
+            <div class="flex-grow-1 d-flex flex-column">
+                @yield('content')
+            </div>
+        @endif
+
+        @hasSection('crumbs')
+            <div class="flex-grow-0 d-flex flex-column">
+                @yield('crumbs')
+            </div>
+        @endif
     </div>
-    <div class="flex-grow-0 d-flex flex-column">
-        @yield('title')
-    </div>
-    <div class="flex-grow-0 d-flex flex-column">
-        @yield('navigations')
-    </div>
-    <div class="flex-grow-1 d-flex flex-column">
-        @yield('content')
-    </div>
-    <div class="flex-grow-0 d-flex flex-column">
-        @yield('crumbs')
-    </div>
-</div>
-</body>
-</html>
+@endcomponent
