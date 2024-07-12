@@ -4,5 +4,5 @@ import * as Axios from 'axios'
 
 window['Axios'] = Axios
 window['Vue'] = Vue
-window['App'] = Vue.createApp({}).mount('#app-evo-auth')
+window['Evo'] = Vue.createApp({}).mount('#app-evo-auth')
 

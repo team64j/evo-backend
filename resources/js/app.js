@@ -15,7 +15,7 @@ export default defineComponent({
 window['Axios'] = Axios
 //window['axios'].defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
 window['Vue'] = Vue
-window['App'] = Vue.createApp({
+window['Evo'] = Vue.createApp({
   components: { GlobalTabs, GlobalMenu, Tree, MainMenu },
   props: {
     data: Object
